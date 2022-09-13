@@ -13,27 +13,28 @@ var a = 5;
 var b = 10;
 var c = function(a, b, c) {
   var x = 10;
-  console.log(x);
-  console.log(a);
+  console.log(x);//10
+  console.log(a);//8
   var f = function(a, b, c) {
     b = a;
-    console.log(b);
+    console.log(b);//8
     b = c;
     var x = 5;
   }
   f(a,b,c);
-  console.log(b);
+  console.log(b); //9
 }
 c(8,9,10);
-console.log(b);
-console.log(x);
+console.log(b); // 10
+console.log(x); // 1
+
 ```
 
 ```javascript
-console.log(bar);
-console.log(baz);
+console.log(bar); // undefined
+console.log(baz); // undefined
 foo();
-function foo() { console.log('Hola!'); }
+function foo() { console.log('Hola!'); } // Hola!
 var bar = 1;
 baz = 2;
 ```
@@ -43,19 +44,25 @@ var instructor = "Tony";
 if(true) {
     var instructor = "Franco";
 }
-console.log(instructor);
+console.log(instructor);//Franco
+```
+
+```javascript
 ```
 
 ```javascript
 var instructor = "Tony";
-console.log(instructor);
+console.log(instructor);//Tony
 (function() {
    if(true) {
       var instructor = "Franco";
-      console.log(instructor);
+      console.log(instructor);//Franco
    }
 })();
-console.log(instructor);
+console.log(instructor);//Tony
+```
+
+```javascript
 ```
 
 ```javascript
@@ -64,33 +71,41 @@ let pm = "Franco";
 if (true) {
     var instructor = "The Flash";
     let pm = "Reverse Flash";
-    console.log(instructor);
-    console.log(pm);
+    console.log(instructor);//The Flash
+    console.log(pm);//Reverse Flash
 }
-console.log(instructor);
-console.log(pm);
+console.log(instructor);//The Flash
+console.log(pm);//Franco
+```
+
+```javascript
+```
+
+```javascript
 ```
 ### Coerción de Datos
 
 ¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
 
 ```javascript
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-{}[0]
+6 / "3" // 2
+"2" * "3" // 6
+4 + 5 + "px"// 9px
+"$" + 4 + 5// $45
+"4" - 2 // 2
+"4px" - 2 // NaN
+7 / 0 // Infinity
+{}[0] // undefined
+```
+```
 parseInt("09")
-5 && 2
-2 && 5
-5 || 0
-0 || 5
-[3]+[3]-[10]
-3>2>1
-[] == ![]
+5 && 2 // 2
+2 && 5 // 5
+5 || 0 // 5
+0 || 5 // 5
+[3]+[3]-[10] // 30
+3>2>1 //false
+[] == ![] // true
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
@@ -111,7 +126,7 @@ function test() {
    }
 }
 
-test();
+test(); // undefined 2, porque la variable a se declara en la funcion test, y la funcion foo se declara en la funcion test, por lo tanto se puede llamar a la funcion foo antes de declararla
 ```
 
 Y el de este código? :
@@ -127,7 +142,7 @@ function getFood(food) {
     return snack;
 }
 
-getFood(false);
+getFood(false); // Meow Mix, porque la variable snack se declara en la funcion getFood, y se puede llamar a la funcion getFood antes de declararla
 ```
 
 
@@ -147,11 +162,11 @@ var obj = {
    }
 };
 
-console.log(obj.prop.getFullname());
+console.log(obj.prop.getFullname()); // Aurelio De Rosa, porque this hace referencia al objeto prop
 
 var test = obj.prop.getFullname;
 
-console.log(test());
+console.log(test()); // Juan Perez, porque this hace referencia al objeto global
 ```
 
 ### Event loop
@@ -166,5 +181,5 @@ function printing() {
    console.log(4);
 }
 
-printing();
+printing(); // 1 4 3 2, porque el setTimeout de 0 se ejecuta antes que el setTimeout de 1000
 ```

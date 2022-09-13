@@ -29,3 +29,9 @@ module.exports = {
   BinarioADecimal,
   DecimalABinario,
 }
+
+var global = "hola";
+
+function saludar (){
+  
+}

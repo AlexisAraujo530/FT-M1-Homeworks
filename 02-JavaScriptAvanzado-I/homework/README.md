@@ -96,16 +96,14 @@ console.log(pm);//Franco
 "4px" - 2 // NaN
 7 / 0 // Infinity
 {}[0] // undefined
-```
-```
-parseInt("09")
+parseInt("09") // 9
 5 && 2 // 2
 2 && 5 // 5
 5 || 0 // 5
 0 || 5 // 5
-[3]+[3]-[10] // 30
+[3]+[3]-[10] // 23
 3>2>1 //false
-[] == ![] // true
+[] == ![] // true, porque [] es true y ![] es false
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).

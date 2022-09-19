@@ -15,6 +15,7 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
+  
 }
 
 function nFibonacci(n) {
@@ -30,9 +31,17 @@ Pueden utilizar class o función constructora.
 */
 
 function Queue() {
-
+ this.arr = [];
 }
-
+Queue.prototype.enqueue = function (value) {
+  this.arr.push(value);
+}
+Queue.prototype.dequeue = function () {
+  return this.arr.shift();
+}
+Queue.prototype.size = function () {
+  return this.arr.length;
+}
 // No modifiquen nada debajo de esta linea
 // --------------------------------
 

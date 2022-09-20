@@ -39,6 +39,21 @@ var countArray = function(array) {
 
 var countProps = function(obj) {
     // Tu código aca:
+    let count = 0;
+    for (let key in obj) {
+        count++;
+        if (typeof obj[key] === 'object') {
+            count += countProps(obj[key]);
+        }
+        if (Array.isArray(obj[key])) {
+            obj[key].forEach(element => {
+                count += countProps(element);
+            });
+        }
+        
+    }
+    return count;
+
 
 }
 

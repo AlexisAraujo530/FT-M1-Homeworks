@@ -36,9 +36,7 @@ if(value < this.value){
 };
 };
 BinarySearchTree.prototype.size = function () {
-  if(this.right === null && this.left === null){
-    return 1;
-  }
+  if(this.right === null && this.left === null)return 1;
   if(this.right === null && this.left !== null) return 1 + this.left.size();
   if(this.right !== null && this.left === null) return 1 + this.right.size();
   return 1 + this.right.size() + this.left.size();
